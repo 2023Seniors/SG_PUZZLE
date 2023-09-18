@@ -1,0 +1,22 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{611200B1-46A5-8BD5-6081-159B8F3F21F0}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "SG_PUZZLE",
+			"Type": "Runtime",
+			"LoadingPhase": "Default"
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "ModelingToolsEditorMode",
+			"Enabled": true,
+			"TargetAllowList": [
+				"Editor"
+			]
+		}
+	]
+}

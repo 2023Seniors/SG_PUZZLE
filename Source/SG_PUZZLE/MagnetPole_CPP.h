@@ -31,5 +31,6 @@ public:
 		float mMagneticForce;
 
 	// Update function to apply magnetic interaction
+	UFUNCTION(BlueprintCallable, Category = "Magnetism")
 	void ApplyMagneticForce(AMagnetPole_CPP* otherPole, float minInteractionDistance);
 };

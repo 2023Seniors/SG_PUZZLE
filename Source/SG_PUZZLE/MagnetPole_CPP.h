@@ -22,15 +22,8 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
+	// Force applied on the poles
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Magnetism")
-		bool mbIsNorthPole;  // True for North, False for South
-
-		// Force applied on the poles
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Magnetism")
-		float mMagneticForce;
-
-	// Update function to apply magnetic interaction
-	UFUNCTION(BlueprintCallable, Category = "Magnetism")
-	void ApplyMagneticForce(AMagnetPole_CPP* otherPole, float minInteractionDistance);
+	float mMagneticForce;
 };

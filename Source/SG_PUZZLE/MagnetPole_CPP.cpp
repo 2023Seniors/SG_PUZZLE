@@ -13,33 +13,11 @@ AMagnetPole_CPP::AMagnetPole_CPP()
 // Called when the game starts or when spawned
 void AMagnetPole_CPP::BeginPlay()
 {
-	Super::BeginPlay();
+    Super::BeginPlay();
 }
 
 // Called every frame
 void AMagnetPole_CPP::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-}
-
-void AMagnetPole_CPP::ApplyMagneticForce(AMagnetPole_CPP* otherPole, float minInteractionDistance)
-{
-    FVector direction = otherPole->GetActorLocation() - GetActorLocation();
-    float Distance = direction.Size();
-
-    if (Distance < minInteractionDistance)
-    {
-        direction.Normalize();
-        float force = mMagneticForce * otherPole->mMagneticForce / FMath::Pow(Distance, 2);
-
-        if (mbIsNorthPole == otherPole->mbIsNorthPole)
-        {
-            force = -force;
-        }
-
-        FVector forceVector = force * direction;
-        FHitResult hitResult;
-        AddActorWorldOffset(forceVector, true, &hitResult);
-        otherPole->AddActorWorldOffset(-forceVector, true, &hitResult);
-    }
 }
